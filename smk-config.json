@@ -1,0 +1,460 @@
+{
+    "name": "smk-fap-st",
+    "viewer": {
+        "type": "leaflet",
+        "location": {
+            "center": [
+                -124.35738697695183,
+                54.621653045588374
+            ],
+            "extent": [
+                -133.102012241507,
+                49.5709388790578,
+                -115.61276171239666,
+                59.114894476234326
+            ],
+            "zoom": 5.545850888406212
+        },
+        "baseMap": "Streets"
+    },
+    "layers": [
+        {
+            "type": "vector",
+            "id": "sites-touristiques",
+            "title": "Sites touristiques",
+            "isVisible": true,
+            "isQueryable": true,
+            "opacity": 0.65,
+            "minScale": null,
+            "maxScale": null,
+            "titleAttribute": "OCCUPANT_NAME",
+            "attributes": [
+                {
+                    "id": "occupant-name",
+                    "name": "OCCUPANT_NAME",
+                    "title": "Nom",
+                    "visible": true
+                },
+                {
+                    "id": "occupant-type-description",
+                    "name": "OCCUPANT_TYPE_DESCRIPTION",
+                    "title": "Type",
+                    "visible": false
+                },
+                {
+                    "id": "service-name-french",
+                    "name": "SERVICE_NAME_FRENCH",
+                    "title": "Service",
+                    "visible": true
+                },
+                {
+                    "id": "occupant-description-french",
+                    "name": "OCCUPANT_DESCRIPTION_FRENCH",
+                    "title": "Description",
+                    "visible": true
+                },
+                {
+                    "id": "contact-names",
+                    "name": "CONTACT_NAMES",
+                    "title": "Contact",
+                    "visible": true
+                },
+                {
+                    "id": "physical-address",
+                    "name": "PHYSICAL_ADDRESS",
+                    "title": "Adresse",
+                    "visible": true
+                },
+                {
+                    "id": "locality",
+                    "name": "LOCALITY",
+                    "title": "Localité",
+                    "visible": true
+                },
+                {
+                    "id": "tourism-area-french",
+                    "name": "TOURISM_AREA_FRENCH",
+                    "title": "Région",
+                    "visible": true
+                },
+                {
+                    "id": "contact-email",
+                    "name": "CONTACT_EMAIL",
+                    "title": "Courriel",
+                    "visible": true
+                },
+                {
+                    "id": "contact-phone",
+                    "name": "CONTACT_PHONE",
+                    "title": "Téléphone",
+                    "visible": true
+                },
+                {
+                    "id": "website-url",
+                    "name": "WEBSITE_URL",
+                    "title": "Site",
+                    "visible": true
+                },
+                {
+                    "id": "business-category-class",
+                    "name": "BUSINESS_CATEGORY_CLASS",
+                    "title": "BUSINESS_CATEGORY_CLASS",
+                    "visible": false
+                },
+                {
+                    "id": "business-category-description",
+                    "name": "BUSINESS_CATEGORY_DESCRIPTION",
+                    "title": "BUSINESS_CATEGORY_DESCRIPTION",
+                    "visible": false
+                },
+                {
+                    "id": "alias-address",
+                    "name": "ALIAS_ADDRESS",
+                    "title": "Adresse",
+                    "visible": false
+                },
+                {
+                    "id": "custodian-org-description",
+                    "name": "CUSTODIAN_ORG_DESCRIPTION",
+                    "title": "CUSTODIAN_ORG_DESCRIPTION",
+                    "visible": false
+                },
+                {
+                    "id": "date-updated",
+                    "name": "DATE_UPDATED",
+                    "title": "DATE_UPDATED",
+                    "visible": false
+                },
+                {
+                    "id": "description",
+                    "name": "DESCRIPTION",
+                    "title": "Description",
+                    "visible": false
+                },
+                {
+                    "id": "keywords",
+                    "name": "KEYWORDS",
+                    "title": "Mots clés",
+                    "visible": false
+                },
+                {
+                    "id": "latitude",
+                    "name": "LATITUDE",
+                    "title": "LATITUDE",
+                    "visible": false
+                },
+                {
+                    "id": "longitude",
+                    "name": "LONGITUDE",
+                    "title": "LONGITUDE",
+                    "visible": false
+                },
+                {
+                    "id": "sequence-id",
+                    "name": "SEQUENCE_ID",
+                    "title": "SEQUENCE_ID",
+                    "visible": false
+                },
+                {
+                    "id": "service-name",
+                    "name": "SERVICE_NAME",
+                    "title": "",
+                    "visible": false
+                },
+                {
+                    "id": "source-data-id",
+                    "name": "SOURCE_DATA_ID",
+                    "title": "SOURCE_DATA_ID",
+                    "visible": false
+                },
+                {
+                    "id": "supplied-source-id-ind",
+                    "name": "SUPPLIED_SOURCE_ID_IND",
+                    "title": "SUPPLIED_SOURCE_ID_IND",
+                    "visible": false
+                },
+                {
+                    "id": "tourism-area",
+                    "name": "TOURISM_AREA",
+                    "title": "TOURISM_AREA",
+                    "visible": false
+                }
+            ],
+            "queries": [
+                {
+                    "id": "sites-touristiques-query-0",
+                    "title": "Recherche par catégorie",
+                    "description": "Que cherchez-vous?",
+                    "parameters": [
+                        {
+                            "id": "parameter-0",
+                            "title": "Nom occupant",
+                            "type": "select-unique",
+                            "uniqueAttribute": "OCCUPANT_NAME",
+                            "useFallback": true
+                        },
+                        {
+                            "id": "parameter-1",
+                            "title": "Catégorie",
+                            "type": "select-unique",
+                            "uniqueAttribute": "SERVICE_NAME_FRENCH"
+                        },
+                        {
+                            "id": "parameter-2",
+                            "title": "Localité",
+                            "type": "select-unique",
+                            "uniqueAttribute": "LOCALITY"
+                        },
+                        {
+                            "id": "parameter-3",
+                            "title": "Région",
+                            "type": "select-unique",
+                            "uniqueAttribute": "TOURISM_AREA_FRENCH"
+                        }
+                    ],
+                    "predicate": null
+                }
+            ],
+            "useClustering": true,
+            "dataUrl": "https://openmaps.gov.bc.ca/geo/pub/WHSE_IMAGERY_AND_BASE_MAPS.GSR_FRPH_TOURISM_SVW/ows?service=WMS&request=GetMap&version=1.1.1&layers=pub%3AWHSE_IMAGERY_AND_BASE_MAPS.GSR_FRPH_TOURISM_SVW&styles=3601&format=application/json;type=geojson&transparent=true&cql_filter=include&srs=EPSG%3A4326&width=645&height=728&bbox=-131.8579103,46.6645175,-117.6855469,56.547372",
+            "legend": {
+                "line": false,
+                "point": true
+            },
+            "style": {
+                "strokeColor": "#3388ff",
+                "strokeOpacity": 1,
+                "strokeWidth": 3,
+                "strokeCap": "round",
+                "strokeJoin": "round",
+                "fill": false,
+                "fillColor": "#3388ff",
+                "fillOpacity": 0.2,
+                "marker": true,
+                "stroke": false,
+                "markerUrl": "assets/pin-blue.png",
+                "markerSize": [
+                    32,
+                    42
+                ],
+                "markerOffset": [
+                    16,
+                    21
+                ]
+            },
+            "useHeatmap": false,
+            "useRaw": false,
+            "legends": null,
+            "geometryAttribute": "SERVICE_NAME_FRENCH"
+        }
+    ],
+    "tools": [
+        {
+            "type": "toolbar",
+            "enabled": true
+        },
+        {
+            "order": 1,
+            "icon": "menu",
+            "position": "toolbar",
+            "type": "list-menu",
+            "enabled": true,
+            "title": "Sites touristiques"
+        },
+        {
+            "type": "pan",
+            "enabled": true
+        },
+        {
+            "type": "zoom",
+            "enabled": true
+        },
+        {
+            "order": 1,
+            "position": "list-menu",
+            "icon": "help",
+            "title": "À propos de cette application",
+            "content": "<div lang=\"EN-CA\" style=\"font-size:10.0pt;line-height:115%;mso-ascii-font-family:Calibri;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:Calibri;mso-bidi-font-family:Arial;mso-ansi-language:EN-CA;mso-fareast-language:FR-CA\">\n<div>\n<p class=\"MsoNormal\" style=\"background:white\">\n<font face=\"Arial\">\nCette carte vous permet de repérer les ressources et les services en français offerts en Colombie-Britannique. Cinq domaines y sont affichés sous forme de couches successives et permettent une recherche par sujet, par catégorie et par zone géographique. À partir du menu, vous pouvez utiliser l’outil de la carte pour l’afficher en plans plus rapprochés (zoom) ou pour la voir en mode panoramique.<br>\n<br>\nVous pouvez vous concentrer sur une ou plusieurs couches à la fois avec le menu \"domaines de la carte\". Vous pouvez aussi effectuer une recherche à partir du menu \"recherche par catégorie\" ou à l’intérieur d’une zone géographique précise, sous \"chercher à proximité\".<br>\n<br>\nUne fois que vous aurez trouvé un service, cliquez sur le marqueur de la carte pour obtenir de l’information à son sujet et en connaître l’emplacement. Les lieux offrant plusieurs services s’afficheront avec plusieurs marqueurs.<br>\n<br>\n<img src=\"assets/cluster.PNG\">&nbsp;&nbsp;Les chiffres qui figurent dans un cercle représentent un groupement de ressources.  Cliquez sur le cercle ou rapprochez l’affichage pour les voir.\n</div>\n</font>\n</div>",
+            "type": "about",
+            "enabled": true
+        },
+        {
+            "order": 3,
+            "position": [
+                "shortcut-menu",
+                "list-menu"
+            ],
+            "icon": "layers",
+            "title": "Layers",
+            "command": {
+                "allVisibility": true,
+                "filter": true,
+                "legend": true
+            },
+            "glyph": {
+                "visible": "check_circle",
+                "hidden": "check_circle_outline"
+            },
+            "type": "layers",
+            "enabled": false,
+            "display": [
+                {
+                    "id": "sites-touristiques",
+                    "alwaysShowLegend": true
+                }
+            ]
+        },
+        {
+            "order": 3,
+            "position": [
+                "toolbar",
+                "shortcut-menu",
+                "list-menu"
+            ],
+            "icon": "map",
+            "title": "Base Maps",
+            "mapStyle": {
+                "width": "110px",
+                "height": "110px"
+            },
+            "type": "baseMaps",
+            "enabled": true,
+            "choices": [
+                "Streets",
+                "Imagery",
+                "Topographic"
+            ]
+        },
+        {
+            "order": 5,
+            "position": "list-menu",
+            "icon": "info_outline",
+            "title": "Cherchez a proximité",
+            "command": {
+                "select": false,
+                "radius": true,
+                "radiusUnit": true,
+                "nearBy": true,
+                "attributeMode": false
+            },
+            "radius": "2",
+            "radiusUnit": "km",
+            "type": "identify",
+            "enabled": true,
+            "showPanel": true,
+            "showWidget": true,
+            "style": {
+                "strokeWidth": 1,
+                "strokeStyle": "1, 1",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0.8,
+                "fillColor": "#000000",
+                "fillOpacity": 0.5,
+                "markerSize": [
+                    20,
+                    20
+                ],
+                "markerOffset": [
+                    10,
+                    0
+                ]
+            },
+            "showTitle": true
+        },
+        {
+            "type": "search",
+            "enabled": true
+        },
+        {
+            "type": "coordinate",
+            "enabled": false
+        },
+        {
+            "order": 6,
+            "position": [
+                "shortcut-menu",
+                "list-menu"
+            ],
+            "icon": "straighten",
+            "title": "Measurement",
+            "type": "measure",
+            "enabled": false
+        },
+        {
+            "type": "markup",
+            "enabled": false
+        },
+        {
+            "order": 2,
+            "showFactor": true,
+            "showBar": true,
+            "showZoom": false,
+            "type": "scale",
+            "enabled": false
+        },
+        {
+            "type": "minimap",
+            "enabled": false
+        },
+        {
+            "order": 4,
+            "position": [
+                "list-menu",
+                "shortcut-menu"
+            ],
+            "icon": "directions_car",
+            "title": "Directions",
+            "geocoderService": {},
+            "routePlannerService": {},
+            "optimal": false,
+            "roundTrip": false,
+            "criteria": "shortest",
+            "truck": false,
+            "truckRoute": null,
+            "truckHeight": null,
+            "truckWidth": null,
+            "truckLength": null,
+            "truckWeight": null,
+            "command": {
+                "optimal": true,
+                "roundTrip": true,
+                "criteria": true,
+                "vehicleType": false,
+                "truckRoute": false,
+                "truckHeight": false,
+                "truckWidth": false,
+                "truckLength": false,
+                "truckWeight": false,
+                "truckHeightUnit": true,
+                "truckWidthUnit": true,
+                "truckLengthUnit": true,
+                "truckWeightUnit": true
+            },
+            "type": "directions",
+            "enabled": true
+        },
+        {
+            "type": "location",
+            "enabled": true
+        },
+        {
+            "order": 6,
+            "position": "list-menu",
+            "icon": "select_all",
+            "title": "Selected Features",
+            "command": {
+                "clear": true,
+                "remove": true
+            },
+            "type": "select",
+            "enabled": false
+        },
+        {
+            "type": "legend",
+            "enabled": false
+        }
+    ],
+    "version": "1.0.0-beta.9",
+    "createdBy": "Nicole de Greef",
+    "createdDate": "2020-11-02T22:11:59.334Z"
+}
