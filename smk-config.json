@@ -15,7 +15,8 @@
             ],
             "zoom": 5.545850888406212
         },
-        "baseMap": "Streets"
+        "baseMap": "Streets",
+        "clusterOption":{"showCoverageOnHover":false}
     },
     "layers": [
         {
