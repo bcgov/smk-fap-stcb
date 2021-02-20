@@ -15,8 +15,7 @@
             ],
             "zoom": 5.545850888406212
         },
-        "baseMap": "Streets",
-        "clusterOption":{"showCoverageOnHover":false}
+        "baseMap": "Streets"
     },
     "layers": [
         {
@@ -181,46 +180,16 @@
                     "visible": false
                 }
             ],
-            "queries": [
-                {
-                    "id": "sites-touristiques-query-0",
-                    "title": "Recherche par catégorie",
-                    "description": "Que cherchez-vous?",
-                    "parameters": [
-                        {
-                            "id": "parameter-0",
-                            "title": "Nom occupant",
-                            "type": "select-unique",
-                            "uniqueAttribute": "OCCUPANT_NAME",
-                            "useFallback": true
-                        },
-                        {
-                            "id": "parameter-1",
-                            "title": "Catégorie",
-                            "type": "select-unique",
-                            "uniqueAttribute": "SERVICE_NAME_FRENCH"
-                        },
-                        {
-                            "id": "parameter-2",
-                            "title": "Localité",
-                            "type": "select-unique",
-                            "uniqueAttribute": "LOCALITY"
-                        },
-                        {
-                            "id": "parameter-3",
-                            "title": "Région",
-                            "type": "select-unique",
-                            "uniqueAttribute": "TOURISM_AREA_FRENCH"
-                        }
-                    ],
-                    "predicate": null
-                }
-            ],
+            "queries": [],
             "useClustering": true,
+            "clusterOption": {
+                "showCoverageOnHover": false
+            },
             "dataUrl": "https://openmaps.gov.bc.ca/geo/pub/WHSE_IMAGERY_AND_BASE_MAPS.GSR_FRPH_TOURISM_SVW/ows?service=WMS&request=GetMap&version=1.1.1&layers=pub%3AWHSE_IMAGERY_AND_BASE_MAPS.GSR_FRPH_TOURISM_SVW&styles=3601&format=application/json;type=geojson&transparent=true&cql_filter=include&srs=EPSG%3A4326&width=645&height=728&bbox=-131.8579103,46.6645175,-117.6855469,56.547372",
             "legend": {
                 "line": false,
-                "point": true
+                "point": true,
+                "title": null
             },
             "style": {
                 "strokeColor": "#3388ff",
@@ -246,7 +215,9 @@
             "useHeatmap": false,
             "useRaw": false,
             "legends": null,
-            "geometryAttribute": "SERVICE_NAME_FRENCH"
+            "geometryAttribute": "SERVICE_NAME_FRENCH",
+            "metadataUrl": "https://catalogue.data.gov.bc.ca/dataset/ce584955-08a0-4d8d-9eb4-08b045cd2ff0",
+            "popupTemplate": "<div>\n<style>\ntable {\n         font-family: Helvetica,Arial,sans-serif;\n\t font-size: 6;\n        }\n               \n</style>\n<div>\n<table border=\"0\" width=\"80%\">\n<tbody>\n<tr><td colspan=\"2\"><b>{{feature.title}}</b> ({{feature.properties['SERVICE_NAME_FRENCH']}})</td></tr>\n<tr><td colspan=\"2\">&nbsp;</td></tr>\n<!--tr><td colspan=\"2\">&nbsp;</td></tr-->\n<tr v-if=\"feature.properties['OCCUPANT_DESCRIPTION_FRENCH']!== null\"><td colspan=\"2\">{{feature.properties['OCCUPANT_DESCRIPTION_FRENCH']}}</td></tr>\n<tr><td colspan=\"2\">&nbsp;</td></tr>\n<tr v-if=\"feature.properties['CONTACT_NAMES']!== null\"><td><b>Contact:</b></td><td>{{feature.properties['CONTACT_NAMES']}}</td></tr>\n<tr><td colspan=\"2\">&nbsp;</td></tr>\n<tr v-if=\"feature.properties['PHYSICAL_ADDRESS'] !== null\"><td><b>Adresse:</b></td><td>{{feature.properties['PHYSICAL_ADDRESS']}}</td></tr>\n<tr><td colspan=\"2\">&nbsp;</td></tr>\n<tr v-if=\"feature.properties['TOURISM_AREA_FRENCH'] !== null\"><td><b>Région:</b></td><td>{{feature.properties['TOURISM_AREA_FRENCH']}}</td></tr>\n<tr><td colspan=\"2\">&nbsp;</td></tr>\n<tr v-if=\"feature.properties['CONTACT_EMAIL'] !== null\"><td><b>Courriel:</b></td><td>{{feature.properties['CONTACT_EMAIL']}}</td></tr>\n<tr><td colspan=\"2\">&nbsp;</td></tr>\n<tr v-if=\"feature.properties['CONTACT_PHONE'] !== null\"><td><b>Phone:</b></td><td>{{feature.properties['CONTACT_PHONE']}}</td></tr>\n<tr><td colspan=\"2\">&nbsp;</td></tr>\n<tr v-if=\"feature.properties['WEBSITE_URL'] !== null\"><td colspan=\"2\"><a target=\"_blank\" v-bind:href=\"feature.properties['WEBSITE_URL']\">{{feature.properties['WEBSITE_URL']}}</a></td></tr>\n</tbody>\n</table>\n</div>\n</div>"
         }
     ],
     "tools": [
@@ -301,7 +272,7 @@
             "display": [
                 {
                     "id": "sites-touristiques",
-                    "alwaysShowLegend": true
+                    "alwaysShowLegend": false
                 }
             ]
         },
@@ -334,11 +305,11 @@
             "command": {
                 "select": false,
                 "radius": true,
-                "radiusUnit": true,
+                "radiusUnit": null,
                 "nearBy": true,
                 "attributeMode": false
             },
-            "radius": "2",
+            "radius": "5",
             "radiusUnit": "km",
             "type": "identify",
             "enabled": true,
@@ -432,7 +403,7 @@
                 "truckWeightUnit": true
             },
             "type": "directions",
-            "enabled": true
+            "enabled": false
         },
         {
             "type": "location",
@@ -453,6 +424,20 @@
         {
             "type": "legend",
             "enabled": false
+        },
+        {
+            "order": "4",
+            "within": false,
+            "command": {
+                "within": false,
+                "select": false
+            },
+            "type": "query",
+            "instance": "sites-touristiques--sites-touristiques-query-0",
+            "enabled": false,
+            "title": "Recherche par catégorie",
+            "position": "list-menu",
+            "showTitle": true
         }
     ],
     "version": "1.0.0-beta.9",
