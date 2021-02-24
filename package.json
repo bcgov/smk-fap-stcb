@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "smk": "^1.0.2"
+    "@qqnluaq/smk": "^1.0.9",
+    "http-server": "^0.12.3"
+  },
+  "scripts": {
+    "view": "http-server -o -c-1"
   }
 }
