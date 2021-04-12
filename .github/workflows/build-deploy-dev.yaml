@@ -49,7 +49,7 @@ jobs:
 
     - name: Building image
       #uses: ./comp-actions/smk-build
-      uses: bcgov/smk-actions/smk-build@V1
+      uses: bcgov/smk-actions/smk-build@main
       id: buildSMKImage
       if: env.OPENSHIFT_SERVER_URL != '' &&  env.OPENSHIFT_TOKEN_DEV != '' && env.GHCR_USER != '' && env.GHCR_TOKEN != ''
       with:
@@ -61,7 +61,7 @@ jobs:
 
     - name: deploying dev
       #uses: ./comp-actions/smk-deploy
-      uses: bcgov/smk-actions/smk-deploy@V1
+      uses: bcgov/smk-actions/smk-deploy@main
       id: deploySMKContainer
       if: env.OPENSHIFT_SERVER_URL != '' &&  env.OPENSHIFT_TOKEN_DEV != '' && env.GHCR_USER != '' && env.GHCR_TOKEN != ''
       with:
