@@ -1,4 +1,8 @@
 # smk-fap-stcb
+
+# This SMK app is not required and has been archived.
+
+
 Sites touristiques de la Colombie-Brittanique (a French language map displaying tourist sites in BC)
 
 
